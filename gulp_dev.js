@@ -59,7 +59,7 @@ gulp.task("js",()=>{
 // 5 处理html 任务
 gulp.task("html",()=>{
   return gulp
-    .src("src/index.html")
+    .src("src/*.html")
     .pipe(
       fileInclude({
         prefix: "@@",
@@ -82,7 +82,8 @@ gulp.task("autopage", () => {
     server:{
       baseDir:"./dist/"
     },
-    port:9999
+    port:9999,
+    notify:false
   });
   // 监听html文件的改变 从而重新执行 html 任务   刷新浏览器
   gulp.watch(["src/*.html","src/components/*.html"],gulp.series(["html","reload"]));

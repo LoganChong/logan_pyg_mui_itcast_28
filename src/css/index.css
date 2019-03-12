@@ -27,8 +27,6 @@ body {
   left: 0;
   background-color: #fff;
   border-top: 1px solid #ccc;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 .pyg_footer a {
@@ -36,47 +34,17 @@ body {
   font-size: 13px;
   text-align: center;
   padding-top: 5px;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
 }
 .pyg_footer a i {
   font-size: 18px;
 }
-.loadding::before {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
-  opacity: 0.5;
-  content: "";
-  z-index: 100;
-}
-.loadding::after {
-  font: normal normal normal 14px/1 FontAwesome;
-  position: fixed;
-  top: 40%;
-  left: 50%;
-  margin-left: -50px;
-  font-size: 100px;
-  color: #0094ff;
-  content: "\f110";
-  z-index: 101;
-  -webkit-animation: fa-spin 1s infinite linear;
-          animation: fa-spin 1s infinite linear;
-}
 .pyg_view .pyg_cats {
   padding: 10px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 .pyg_view .pyg_cats a {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
   text-align: center;
 }
 .pyg_view .pyg_cats a img {
@@ -89,14 +57,9 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .pyg_view .pyg_goodlist .good_item .goods li {
   width: 49%;
@@ -120,5 +83,3 @@ body {
   width: 80%;
   margin: 0 auto;
 }
-
-/*# sourceMappingURL=index.css.map */

@@ -67,25 +67,63 @@ body {
   -webkit-animation: fa-spin 1s infinite linear;
           animation: fa-spin 1s infinite linear;
 }
-.pyg_view .pyg_cats {
-  padding: 10px 0;
+.pyg_view {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  overflow: hidden;
+  /* 
+    默认情况下  
+        子项的宽度 =   内容撑开 
+        子项的高度 =    父项的高度  
+     */
 }
-.pyg_view .pyg_cats a {
+.pyg_view .left_box {
+  width: 80px;
+  overflow: hidden;
+}
+.pyg_view .left_box .left_menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.pyg_view .left_box .left_menu li {
+  height: 40px;
+  font-size: 13px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.pyg_view .left_box .left_menu .active {
+  border-left: 5px solid #0094ff;
+  background-color: #fff;
+}
+.pyg_view .right_box {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  text-align: center;
+  overflow: hidden;
+  background-color: #fff;
 }
-.pyg_view .pyg_cats a img {
-  width: 70%;
+.pyg_view .right_box .rigth_item .item_title {
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 14px;
+  color: #0094ff;
 }
-.pyg_view .pyg_goodlist .good_item img {
-  width: 100%;
-}
-.pyg_view .pyg_goodlist .good_item .goods {
+.pyg_view .right_box .rigth_item .item_list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -94,31 +132,17 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
-.pyg_view .pyg_goodlist .good_item .goods li {
-  width: 49%;
-  background-color: #fff;
-  padding: 5px;
-  margin-bottom: 5px;
+.pyg_view .right_box .rigth_item .item_list li {
+  width: 33.33%;
 }
-.pyg_view .pyg_goodlist .good_item .goods li .goods_detail .goods_name {
+.pyg_view .right_box .rigth_item .item_list li a {
+  text-align: center;
+  font-size: 13px;
   color: #000;
-  font-size: 14px;
-  height: 40px;
-  overflow: hidden;
 }
-.pyg_view .pyg_goodlist .good_item .goods li .goods_detail .goods_price {
-  color: red;
-  font-size: 16px;
-  font-weight: 600;
-}
-.pyg_view .pyg_goodlist .good_item .goods li .goods_similar {
-  display: block;
+.pyg_view .right_box .rigth_item .item_list li a img {
   width: 80%;
-  margin: 0 auto;
 }
 
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=category.css.map */

@@ -67,58 +67,83 @@ body {
   -webkit-animation: fa-spin 1s infinite linear;
           animation: fa-spin 1s infinite linear;
 }
-.pyg_view .pyg_cats {
-  padding: 10px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-.pyg_view .pyg_cats a {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  text-align: center;
-}
-.pyg_view .pyg_cats a img {
-  width: 70%;
-}
-.pyg_view .pyg_goodlist .good_item img {
+.list_header {
+  position: fixed;
   width: 100%;
+  left: 0;
+  top: 0;
+  height: 45px;
+  background-color: #0094ff;
 }
-.pyg_view .pyg_goodlist .good_item .goods {
+.list_header span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #fff;
+}
+.list_header i {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 20px;
+  color: #fff;
+}
+.pyg_view {
+  position: relative;
+  overflow: scroll;
+}
+.pyg_view .list {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+.pyg_view .list li {
+  background-color: #fff;
+  margin-bottom: 5px;
+}
+.pyg_view .list li a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  padding: 10px;
+  color: #333;
 }
-.pyg_view .pyg_goodlist .good_item .goods li {
-  width: 49%;
-  background-color: #fff;
-  padding: 5px;
-  margin-bottom: 5px;
+.pyg_view .list li a .item_left {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
-.pyg_view .pyg_goodlist .good_item .goods li .goods_detail .goods_name {
-  color: #000;
-  font-size: 14px;
-  height: 40px;
+.pyg_view .list li a .item_left img {
+  width: 70%;
+}
+.pyg_view .list li a .item_right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   overflow: hidden;
 }
-.pyg_view .pyg_goodlist .good_item .goods li .goods_detail .goods_price {
-  color: red;
+.pyg_view .list li a .item_right .goods_name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #666;
   font-size: 16px;
-  font-weight: 600;
 }
-.pyg_view .pyg_goodlist .good_item .goods li .goods_similar {
-  display: block;
-  width: 80%;
-  margin: 0 auto;
+.pyg_view .list li a .item_right .goods_price {
+  color: #f00;
 }
 
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=goods_list.css.map */

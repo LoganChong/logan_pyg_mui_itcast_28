@@ -1,0 +1,184 @@
+html,
+body,
+.pyg_view {
+  height: 100%;
+}
+body {
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+.pyg_view {
+  overflow: scroll;
+}
+.pyg_header {
+  padding: 5px;
+  width: 100%;
+  height: 45px;
+  position: fixed;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+}
+.pyg_footer {
+  width: 100%;
+  height: 45px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.pyg_footer a {
+  color: #000;
+  font-size: 13px;
+  text-align: center;
+  padding-top: 5px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.pyg_footer a i {
+  font-size: 18px;
+}
+.loadding::before {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  opacity: 0.5;
+  content: "";
+  z-index: 100;
+}
+.loadding::after {
+  font: normal normal normal 14px/1 FontAwesome;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  margin-left: -50px;
+  font-size: 100px;
+  color: #0094ff;
+  content: "\f110";
+  z-index: 101;
+  -webkit-animation: fa-spin 1s infinite linear;
+          animation: fa-spin 1s infinite linear;
+}
+.pyg_view {
+  background-color: #fff;
+  padding: 0 10px;
+}
+.pyg_view .gd_goods_name {
+  padding: 5px;
+  font-size: 14px;
+}
+.pyg_view .gd_goods_price {
+  padding: 5px;
+  color: #f00;
+  font-size: 20px;
+}
+.pyg_view .logistics ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.pyg_view .logistics ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #333;
+  font-size: 13px;
+  padding: 5px 0;
+}
+.pyg_view .logistics ul li span:nth-of-type(1) {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  color: #ccc;
+}
+.pyg_view .logistics ul li span:nth-of-type(2) {
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
+}
+.pyg_view .gd_info_row {
+  margin-top: 5px;
+}
+.pyg_view .gd_info_row #item1 ul,
+.pyg_view .gd_info_row #item1 li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.pyg_view .gd_info_row #item2 ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.pyg_view .gd_info_row #item2 ul li {
+  font-size: 13px;
+  color: #666;
+}
+.pyg_view .gd_info_row #item2 ul li .gi_title {
+  font-size: 16px;
+  padding: 5px;
+  border-bottom: 1px solid #000;
+}
+.pyg_view .gd_info_row #item2 ul li .gi_content {
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.pyg_view .gd_info_row #item2 ul li .gi_content span:nth-of-type(1) {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.pyg_view .gd_info_row #item2 ul li .gi_content span:nth-of-type(2) {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+}
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 45px;
+  text-align: center;
+  font-size: 13px;
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+footer a {
+  color: #666;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+footer a i.fa {
+  font-size: 18px;
+}
+footer a:nth-of-type(-n+2) {
+  padding-top: 5px;
+  border-right: 1px solid #ccc;
+}
+footer a:nth-last-of-type(-n+2) {
+  color: #fff;
+  background-color: #f0ad4e;
+}
+footer a:nth-last-of-type(-n+2) div {
+  line-height: 45px;
+}
+footer a:last-child {
+  background-color: #dd524d;
+}
+
+/*# sourceMappingURL=goods_detail.css.map */

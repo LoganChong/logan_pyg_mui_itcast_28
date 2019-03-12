@@ -1,0 +1,67 @@
+@import "./common.less";
+
+.list_header{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 45px;
+    background-color: #0094ff;
+    span{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        color: #fff;
+
+    }
+    i{
+        position: absolute;
+        top: 50%;
+        right: 6px;
+        transform: translateY(-50%);
+        font-size: 20px;
+        color: #fff;
+    }
+}
+.pyg_view{
+    position: relative;
+    overflow: scroll;
+    .list{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li{
+            background-color: #fff;
+            margin-bottom: 5px;
+            a{
+                display: flex;
+                padding: 10px;
+                color: #333;
+                .item_left{
+                    flex: 1;
+                    img{
+                        width: 70%;
+                    }
+                }
+                .item_right{
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    overflow: hidden;
+                    .goods_name{
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        color: #666;
+                        font-size: 16px;
+                    }
+                    .goods_price{
+                        color: #f00;
+                    }
+                }
+            }
+        }
+    }
+}

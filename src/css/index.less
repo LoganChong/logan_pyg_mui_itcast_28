@@ -1,29 +1,57 @@
-html,body,.pyg_view{
-  height: 100%;
-}
-body{
-  padding-top: 45px;
-  padding-bottom: 45px;
-}
+@import './common.less';
+ // 分类菜单
 .pyg_view{
-  overflow: scroll;
-  background-color: aqua;
+  .pyg_cats{
+    padding: 10px 0;
+    display: flex;
+   //  flex-direction: row;
+   //  justify-content: space-around;
+   //  align-items: center;
+    a{
+      flex: 1;
+     text-align: center;
+      img{
+        width: 70%;
+      }
+    }
+  }
+  .pyg_goodlist{
+    .good_item{
+      img{width: 100%;}
+      .goods{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        li{
+          width: 49%;
+          background-color: #fff;
+          padding: 5px;
+          margin-bottom: 5px;
+          .goods_detail{
+            .goods_small_logo{}
+            .goods_name{
+              color: #000;
+              font-size: 14px;
+              height: 40px;
+              overflow: hidden;
+            }
+            .goods_price{
+              color: red;
+              font-size: 16px;
+              font-weight: 600;
+            }
+          }
+          .goods_similar{
+            display: block;
+            width: 80%;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
 }
-
-.pyg_header{
-  padding: 5px;
-  width: 100%;
-  height: 45px;
-  position: fixed;
-  background-color: #fff;
-  top: 0;
-  left: 0;
-}
-.pyg_footer{
-  background-color: forestgreen;
-  width: 100%;
-  height: 45px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-}
+ 

@@ -1,11 +1,14 @@
 {
-  "name": "02-pyg",
+  "name": "mobile_pyg",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "gulp_dev.js",
   "scripts": {
     "dev": "gulp -f gulp_dev.js ",
     "pro": "gulp -f gulp_pro.js "
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/ukSir/pyg_mobile28.git"
   },
   "keywords": [],
   "author": "",
@@ -25,5 +28,6 @@
     "gulp-rev-collector": "^1.3.1",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2"
-  }
+  },
+  "description": ""
 }

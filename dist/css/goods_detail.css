@@ -67,6 +67,9 @@ body {
   -webkit-animation: fa-spin 1s infinite linear;
           animation: fa-spin 1s infinite linear;
 }
+.mui-toast-message {
+  white-space: nowrap;
+}
 .pyg_view {
   background-color: #fff;
   padding: 0 10px;

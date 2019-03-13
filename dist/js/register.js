@@ -43,11 +43,12 @@ $(function () {
         mobile: mobile_txt
       }, function (res) {
         if (res.meta.status == 200) {
-          // 1 禁用按钮
-          $(".get_code_btn").arrt("disabled", "disabled"); // 2 开启定时器 倒计时 60s
+          console.log(res); // 1 禁用按钮
+
+          $(".get_code_btn").attr("disabled", "disabled"); // 2 开启定时器 倒计时 60s
           // 1 修改按钮的文字 定时的时间
 
-          var time = 5;
+          var time = 60;
           var timeId = setInterval(function () {
             time--;
             $(".get_code_btn").text("".concat(time, " \u79D2\u540E\u91CD\u65B0\u53D1\u9001"));
@@ -65,12 +66,14 @@ $(function () {
 
     $('.register_btn').on('tap', function () {
       // 3.1 获取一堆值
-      var mobile_txt = $("input[name='mobile']").val().trim();
-      var code_txt = $("input[name='code']").val().trim();
-      var email_txt = $("input[name='email']").val().trim();
-      var pwd_txt = $("input[name='pwd']").val().trim();
-      var pwd2_txt = $("input[name='pwd2']").val().trim();
-      var gender_txt = $("input[name='gender']").val().trim(); // 3.2 按个验证
+      var mobile_text = $("input[name='mobile']").val().trim();
+      var code_text = $("input[name='code']").val().trim();
+      var email_text = $("input[name='email']").val().trim();
+      var pwd_text = $("input[name='pwd']").val().trim();
+      var pwd2_text = $("input[name='pwd2']").val().trim();
+      var gender_text = $("input[name='gender']:checked").val().trim(); // 需要注意性别gender这个值，如果未加：checked这个筛选，则获取不到值，
+      // 还需要在html中将val的值加上，这样才能获取到值，gender参数在后台应该是必填项
+      // 3.2 按个验证
       // 验证手机号码
 
       if (!checkPhone(mobile_text)) {
@@ -105,20 +108,22 @@ $(function () {
       } // 3.3 构造参数 完成注册
 
 
-      $.post("http://140.143.222.79:9999/public/v1/users/reg", {
+      $.post("http://api.pyg.ak48.xyz/api/public/v1/users/reg", {
         mobile: mobile_text,
         code: code_text,
         email: email_text,
         pwd: pwd_text,
         gender: gender_text
       }, function (res) {
+        console.log(res);
+
         if (res.meta.status == 200) {
           mui.toast('注册成功');
           setTimeout(function () {
             location.href = 'login.html';
           }, 1000);
         } else {
-          mui.toast('res.meta.msg');
+          mui.toast(res.meta.msg);
         }
       });
     });

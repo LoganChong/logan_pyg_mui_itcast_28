@@ -40,11 +40,12 @@ $(function () {
                 { mobile: mobile_txt },
                 function (res) {
                     if (res.meta.status == 200) {
+                        console.log(res);
                         // 1 禁用按钮
-                        $(".get_code_btn").arrt("disabled", "disabled");
+                        $(".get_code_btn").attr("disabled", "disabled");
                         // 2 开启定时器 倒计时 60s
                         // 1 修改按钮的文字 定时的时间
-                        let time = 5;
+                        let time = 60;
                         let timeId = setInterval(() => {
                             time--;
                             $(".get_code_btn").text(`${time} 秒后重新发送`);
@@ -61,13 +62,14 @@ $(function () {
         // 绑定 点击注册 的按钮 事件
         $('.register_btn').on('tap', function () {
             // 3.1 获取一堆值
-            let mobile_txt = $("input[name='mobile']").val().trim();
-            let code_txt = $("input[name='code']").val().trim();
-            let email_txt = $("input[name='email']").val().trim();
-            let pwd_txt = $("input[name='pwd']").val().trim();
-            let pwd2_txt = $("input[name='pwd2']").val().trim();
-            let gender_txt = $("input[name='gender']").val().trim();
-
+            let mobile_text = $("input[name='mobile']").val().trim();
+            let code_text = $("input[name='code']").val().trim();
+            let email_text = $("input[name='email']").val().trim();
+            let pwd_text = $("input[name='pwd']").val().trim();
+            let pwd2_text = $("input[name='pwd2']").val().trim();
+            let gender_text = $("input[name='gender']:checked").val().trim();
+            // 需要注意性别gender这个值，如果未加：checked这个筛选，则获取不到值，
+            // 还需要在html中将val的值加上，这样才能获取到值，gender参数在后台应该是必填项
             // 3.2 按个验证
             // 验证手机号码
             if (!checkPhone(mobile_text)) {
@@ -98,21 +100,23 @@ $(function () {
                 return;
             }
             // 3.3 构造参数 完成注册
-            $.post("http://140.143.222.79:9999/public/v1/users/reg",
+            $.post(
+                "http://api.pyg.ak48.xyz/api/public/v1/users/reg",
                 {
                     mobile: mobile_text,
                     code: code_text,
                     email: email_text,
                     pwd: pwd_text,
                     gender: gender_text
-                },function(res){
-                    if(res.meta.status == 200){
+                }, function (res) {
+                    console.log(res);
+                    if (res.meta.status == 200) {
                         mui.toast('注册成功')
-                        setTimeout(()=>{
+                        setTimeout(() => {
                             location.href = 'login.html'
-                        },1000)
-                    }else{
-                        mui.toast('res.meta.msg');
+                        }, 1000)
+                    } else {
+                        mui.toast(res.meta.msg);
                     }
 
                 });
